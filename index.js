@@ -12,15 +12,13 @@ async function main(){
    await mongoose.connect('mongodb://127.0.0.1:27017/whatsapp');
 }
 
-let chat1 = new Chat({
-    from : "Gayatri",
-    to : "Priya",
-    msg : "Send me my project that i shared with you ",
-    created_at : new Date()
+//Index Route
+app.get("/chats", async (req,res)=>{
 
-});
-chat1.save().then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
-
+   let chats = await Chat.find();
+   console.log(chats);
+   res.send("working");
+})
 
 
 
