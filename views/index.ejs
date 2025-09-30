@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width",initial-scale=1.0>
+      <title>-----------------Messenger App----------</title>
+      <link href="public/style.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    <body style=" background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
+
+    /* Gold shimmer effect */
+    background-image: 
+        linear-gradient(135deg, rgba(255,215,0,0.05) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(255,215,0,0.05) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(255,215,0,0.05) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(255,215,0,0.05) 25%, transparent 25%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+
+    /* Soft glow effect */
+    box-shadow: inset 0 0 50px rgba(255, 215, 0, 0.2);
+
+    /* Ensure it covers entire page */
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;">
+        <h3 style="text-align: center; background-color: antiquewhite;">All Chats! </h3>
+      <%  for(chat of chats){   %>
+    <div class="chat-card" style="width: 400px; background-color: rgb(230, 211, 187); margin: 50px auto; padding: 15px; border-radius: 20px; border: 2px dotted rgb(38, 35, 35); box-shadow: 0 8px 20px rgba(0,0,0,0.5), inset 0 0 15px rgba(255,215,0,0.2);" >
+        <p style="color: rgb(194, 119, 119); ">From : <%= chat.from %>  </p>
+      <div class="chat" >
+          <p> <%= chat.msg %>  </p>
+      </div>
+        <p style="color: rgb(222, 133, 133); " >Received by : <%= chat.to %>  </p >
+        
+    </div>
+<hr>
+<% }  %>
+    </body>
+</html>
+

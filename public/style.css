@@ -1,0 +1,37 @@
+  .chat-card {
+    background: linear-gradient(145deg, #1c1c1c, #2b2b2b); /* dark luxurious background */
+    border-radius: 15px; /* rounded corners for elegance */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 215, 0, 0.2); /* shadow + subtle glow */
+    padding: 20px 25px;
+    width: 250px;
+   
+    color: #fff; /* text color */
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+
+.chat-card:hover {
+    transform: translateY(-5px); /* subtle hover lift */
+}
+
+.chat-card .from {
+    color: #ffdd57; /* gold-like color for luxury feel */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.chat-card .message p {
+    color: #eee;
+    margin: 0;
+    font-size: 14px;
+}
+
+.chat-card .to {
+    color: #ffb347; /* softer gold accent */
+    font-size: 12px;
+    text-align: right;
+}
