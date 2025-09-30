@@ -3,9 +3,13 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 const Chat = require("./models/chat.js");
+//this is used to parse useful data from api body
+app.use(express.urlencoded({extended:true}));
 
 app.set("views",path.join(__dirname, "views"));
 app.set("view engine","ejs");
+app.use(express.static(path.join(__dirname , "public")))
+
 
 main().then(()=>{console.log("Connection is successful")}).catch((err)=>{console.log(err)});
 async function main(){
@@ -19,7 +23,22 @@ app.get("/chats", async (req,res)=>{
    console.log(chats);
    res.render("index.ejs", {chats});
 })
-
+ //New Route
+ app.get("/chats/new",async(req,res)=>{
+    res.render("new.ejs");
+ })
+//Create Route
+app.post("/chats",(req,res)=>{
+  let {from , to , msg} = req.body;
+  let newChat = new Chat({
+    from : from,
+    to : to,
+    msg : msg,
+    created_at : new Date()
+  });
+  newChat.save().then((res)=>{console.log("Chat is saved")}).catch((err)=>{console.log(err)});
+  res.redirect("/chats");
+})
 
 
 app.get("/" , (req,res)=>{

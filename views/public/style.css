@@ -1,5 +1,5 @@
 /* Page background */
-body {
+.body {
     background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
     background-image: 
         linear-gradient(135deg, rgba(255,215,0,0.05) 25%, transparent 25%),
@@ -14,6 +14,7 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
 }
 
+
 /* Header */
 .header {
     text-align: center;
@@ -27,7 +28,7 @@ body {
 .chat-card {
     background-color: rgb(230, 211, 187);
     width: 90%;           /* responsive width */
-    max-width: 400px;     /* card won't grow beyond 400px */
+    max-width: 900px;     /* card won't grow beyond 400px */
     margin: 20px auto;    /* center horizontally with vertical spacing */
     padding: 15px;
     border-radius: 20px;
@@ -67,7 +68,26 @@ hr {
     margin: 15px 0;
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+body{
+    background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
 
+    /* Gold shimmer effect */
+    background-image: 
+        linear-gradient(135deg, rgba(255,215,0,0.05) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(255,215,0,0.05) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(255,215,0,0.05) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(255,215,0,0.05) 25%, transparent 25%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+
+    /* Soft glow effect */
+    box-shadow: inset 0 0 50px rgba(255, 215, 0, 0.2);
+
+    /* Ensure it covers entire page */
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
 /* Responsive tweaks for mobile */
 @media screen and (max-width: 480px) {
     .chat-card {
