@@ -28,6 +28,14 @@
         <p style="color: rgb(194, 119, 119); ">From : <%= chat.from %>  </p>
       <div class="chat" >
           <p> <%= chat.msg %>  </p>
+          <form method="GET" action="/chats/<%= chat._id %>/edit">
+            <button style="">edit</button>
+          </form>
+          <BR>
+          <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+            <button>delete
+            </button>
+          </form>
       </div>
         <p style="color: rgb(222, 133, 133); " >Received by : <%= chat.to %>  </p >
           <hr />
